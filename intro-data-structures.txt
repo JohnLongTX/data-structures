@@ -1,0 +1,76 @@
+Questions
+	
+	1. A line of people at an amusement park ride.
+
+		* The line is composed of members, represented as strings.
+		* There is a front to the line, as well as a back.
+		* When someone enters the line, place them at the end.
+		* People may leave the line whenever they see fit, and those behind them take their place.
+
+		Given the above real-world information, use an array data structure to code the following solution.
+
+		a) Use an array input: ["Vivian", "Ava", "Josh", "Patrick", "Mike"]
+
+			var lineArray = ['Vivian', 'Ava', 'Josh', 'Patrick', 'Mike']
+
+		b) Insert a new person, "Mary" at the end of the line. In other words, you should insert Mary after Mike.
+
+			lineArray.push('Mary')
+
+		c) Find a person in line named "Josh." This function should return the position of 2 in the array, (recall that arrays are 0-based).
+
+			lineArray.indexOf('Josh')
+
+		d) Find a person in line named "Emily." What should your function return if it does not find the item in the array?
+
+			lineArray.indexOf('Emily') === -1 ? 'Not Found' : lineArray.indexOf('Emily')
+
+		e) What if Ava wants to allow a friend, "Melissa", to cut in line in front of her? How would you code this so Melissa appears before Ava?
+
+			lineArray.splice(lineArray.indexOf('Ava'), 0, 'Melissa')
+
+		f) If Patrick wants to leave the line, how would you delete him from the array?
+			
+			lineArray.splice(lineArray.indexOf('Patrick'), 1)
+
+		Answer in JavaScript
+		
+		function lineArray(line){
+  			console.log(line);
+  			line.push('Mary');
+  			console.log('Added Mary to the end of the line', line);
+  			console.log('Position of Josh in the line', line.indexOf('Josh'));
+  			console.log('Position of Emily in the line', (line.indexOf('Emily') === -1 ? 'Not found' : line.indexOf('Emily')));
+  			line.splice(line.indexOf('Ava'), 0, 'Melissa');
+  			console.log('Added Melissa to the line in front of Ava', line);
+  			line.splice(line.indexOf('Patrick'), 1);
+  			console.log('Patrick left the line');
+  			return line;
+		}
+
+		console.log(lineArray(['Vivian', 'Ava', 'Josh', 'Patrick', 'Mike']));
+		
+
+	2. Provide another real-world example that you can model using a data structure.
+
+		Answer: An online shopping cart can be another example that can be modeled with a data structure. 
+			I would use an array to model this and as users add items to the cart those items would be 
+			added to an array of objects where each object would contain the name of the item and the 
+			price of the item.
+
+
+	3. How would your data structure allow developers to access and manipulate the data?
+	
+		Answer: Since this is an array it would be easy for developers to manipulate the data. When a user 
+			adds an item to the cart you simply push that object to the array since order isn't really 
+			important for this. If the user deletes an item from the cart, you could find the index of 
+			that item and remove it from the array.
+
+
+
+
+
+
+
+
+
